@@ -39,18 +39,13 @@
     state: started
     enabled: true
 
-- name: docker | add  "ansibe.cron" user to "docker" group
-  remote_user: ansible.cron
-  user:
-    name: "ansible.cron"
-    group: "docker"
 
 - name: docker | create docker-data directory if it does not exist
   file:
     path: /docker_data
     state: directory
     mode: '0755'
-    owner: ansible.cron
+    owner: root
     group: docker
 
   
@@ -66,16 +61,16 @@
     path: /docker_data/portainer-agent
     state: directory
     mode: '0755'
-    owner: ansible.cron
+    owner: root
     group: docker
 
 - name: docker | copy portainer-agent compose script
   copy:
     src: files/portaineragent.yml
     dest: /docker_data/portainer-agent/docker-compose.yml
-    owner: ansible.cron
+    mode: '0755'
+    owner: root
     group: docker
-    mode: 0755
     
 - name: docker | deploy portainer-agent
   docker_compose:
