@@ -9,7 +9,6 @@
     state: present
     update_cache: no
 
-
 - name: Install bottle python package
   pip:
     name:
@@ -39,7 +38,6 @@
     state: started
     enabled: true
 
-
 - name: docker | create docker-data directory if it does not exist
   file:
     path: /docker_data
@@ -47,7 +45,6 @@
     mode: '0755'
     owner: root
     group: docker
-
   
 - name: docker | docker-compose | Install or upgrade docker-compose
   get_url: 
