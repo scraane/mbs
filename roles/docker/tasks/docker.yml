@@ -39,6 +39,11 @@
     state: started
     enabled: true
 
+- name: docker | add  "ansibe.cron" user to "docker" group
+  remote_user: ansible.cron
+  user:
+    name: "ansible.cron"
+    group: "docker"
 
 - name: docker | create docker-data directory if it does not exist
   file:
