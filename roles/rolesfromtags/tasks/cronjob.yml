@@ -1,6 +1,6 @@
-    - name: pre-run | add ansible-pull postgres cron job
+    - name: pre-run | add ansible-pull {{ rolesfromtags }} cron job
       cron:
-        name: ansible update and install postgres
+        name: ansible update and install {{ rolesfromtags }}
         user: root
         minute: "*/10"
         job: ansible-pull -o -U https://github.com/scraane/mbs-docker-{{ rolesfromtags }}.git
