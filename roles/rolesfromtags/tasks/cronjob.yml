@@ -3,4 +3,4 @@
         name: ansible update and install postgres
         user: root
         minute: "*/10"
-        job: ansible-pull -o -U https://github.com/scraane/mbs-docker-postgres.git
+        job: ansible-pull -o -U https://github.com/scraane/mbs-docker-{{ rolesfromtags }}.git
