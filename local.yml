@@ -19,16 +19,10 @@
   roles:
     - base
 
-- hosts: server
-  tags: server
-  become: true
-  roles:
-    - server
-
 - hosts: postgres
   tags: postgres
   vars:
-    mytag: postgres
+    mytag: docker-postgres
   become: true
   roles:
     - server
