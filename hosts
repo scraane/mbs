@@ -1,7 +1,4 @@
 [server]
-jackett01.lan
-
-[workstation]
 
 
-[docker]
+[postgresql]

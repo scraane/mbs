@@ -26,13 +26,6 @@
         group: root
         mode: 0440
 
-    - name: pre-run | add ansible-pull cron job
-      cron:
-        name: ansible auto-provision
-        user: ansible.cron
-        minute: "*/10"
-        job: ansible-pull -o -U https://github.com/scraane/ansible.git
-
 
 - hosts: all
   tags: base
@@ -46,12 +39,13 @@
   roles:
     - server
 
-- hosts: docker
-  tags: docker
+- hosts: postgresql
+  tags: postgresql
   become: true
   roles:
     - server
     - docker
+    - postgress
     
 - hosts: all
   tags: finalize
