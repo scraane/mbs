@@ -45,7 +45,7 @@
     path: /docker_data
     state: directory
     mode: '0755'
-    owner: root
+    owner: ansible.cron
     group: docker
 
   
