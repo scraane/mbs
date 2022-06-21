@@ -10,4 +10,4 @@ apt install python3 python3-pip gnupg2 -y
 apt install git -y
 pip3 install ansible
 ansible --version
-ansible-pull -U https://github.com/scraane/ansible.git
+ansible-pull -U https://github.com/scraane/mbs.git
