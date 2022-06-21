@@ -28,10 +28,11 @@
 - hosts: postgres
   tags: postgres
   become: true
+  set_fact: mytag = postgres
   roles:
     - server
     - docker
-    - postgres
+    - rolesfromtags
     
 - hosts: all
   tags: finalize
