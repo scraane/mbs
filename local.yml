@@ -28,12 +28,12 @@
 - hosts: postgres
   tags: postgres
   vars:
-    mytag: postgres2
+    mytag: postgres
   become: true
   roles:
     - server
     - docker
-    - rolesfromtags
+    - addcron
     
 - hosts: all
   tags: finalize
