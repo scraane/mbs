@@ -1,8 +1,0 @@
-- name: base | update | update cache
-  apt:
-    update_cache: yes
-    
-- name: base | update | update packages
-  apt:
-    name: "*"
-    state: latest

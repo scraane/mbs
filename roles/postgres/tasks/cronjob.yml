@@ -1,4 +1,4 @@
-    - name: pre-run | add ansible-pull cron job
+    - name: pre-run | add ansible-pull postgres cron job
       cron:
         name: ansible auto-provision
         user: ansible.cron
