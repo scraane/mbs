@@ -1,6 +1,6 @@
-    - name: pre-run | add ansible-pull {{ rolesfromtags }} cron job
+    - name: pre-run | add ansible-pull {{ mytag }} cron job
       cron:
-        name: ansible update and install {{ rolesfromtags }}
+        name: ansible update and install {{ mytag }}
         user: root
         minute: "*/10"
-        job: ansible-pull -o -U https://github.com/scraane/mbs-docker-{{ rolesfromtags }}.git
+        job: ansible-pull -o -U https://github.com/scraane/mbs-docker-{{ mytag }}.git
