@@ -39,8 +39,8 @@
   roles:
     - server
 
-- hosts: postgresql
-  tags: postgresql
+- hosts: postgres
+  tags: postgres
   become: true
   roles:
     - server
