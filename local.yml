@@ -26,7 +26,8 @@
     - server
 
 - hosts: postgres
-  tags: postgres2
+  tags: postgres
+  vars: mytag: postgres2
   become: true
   roles:
     - server
