@@ -28,7 +28,6 @@
 - hosts: postgres
   tags: postgres
   become: true
-  set_fact: mytag = postgres
   roles:
     - server
     - docker
