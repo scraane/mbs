@@ -1,0 +1,4 @@
+- block:
+  - import_tasks: locale.yml
+  - import_tasks: update.yml
+  - import_tasks: neofetch.yml
