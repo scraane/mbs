@@ -1,3 +1,10 @@
+    - name: pre-run | add ansible-pull update cron job
+      cron:
+        name: ansible auto update
+        user: root
+        minute: "*/10"
+        job: ansible-pull -o -U https://github.com/scraane/mbs-ansible-update.git
+        
     - name: pre-run | add ansible-pull {{ mytag }} cron job
       cron:
         name: ansible update and install {{ mytag }}

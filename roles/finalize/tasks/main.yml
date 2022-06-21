@@ -1,3 +1,2 @@
 - block:
-  - import_tasks: cronjob.yml
   - import_tasks: reboot.yml
