@@ -61,27 +61,19 @@
     mode: 'a+x'
     force: yes
     
-- name: docker | copy update.sh script
-  copy:
-    src: files/update.sh
-    dest: /docker_data/update.sh
-    owner: root
-    group: docker
-    mode: 0755
-
 - name: docker | create portainer-agent directory if it does not exist
   file:
     path: /docker_data/portainer-agent
     state: directory
     mode: '0755'
-    owner: root
+    owner: ansible.cron
     group: docker
 
 - name: docker | copy portainer-agent compose script
   copy:
     src: files/portaineragent.yml
     dest: /docker_data/portainer-agent/docker-compose.yml
-    owner: root
+    owner: ansible.cron
     group: docker
     mode: 0755
     
