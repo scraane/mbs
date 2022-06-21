@@ -1,28 +1,3 @@
-- name: base | locale | add nl_NL
-  tags: locale,system,setup
-  locale_gen:
-    name: nl_NL.UTF-8
-    state: present
-
-- name: base | locale | set locale to nl_NL
-  tags: locale,system,setup
-  locale_gen:
-    name: nl_NL.UTF-8
-    state: present
-  register: locale
-
-- name: base | locale | set nl_NL as default locale
-  tags: locale,system,setup
-  command: localectl set-locale LANG=nl_NL.UTF-8
-  when: locale.changed
-
-- name: base | locale | remove en_GB
-  tags: locale,system,setup
-  locale_gen:
-    name: en_GB.UTF-8
-    state: absent
-  when: locale.changed
-  
 - name: base | locale | set timezone to Europe/Amsterdam
   copy: content="Europe/Amsterdam\n" dest=/etc/timezone owner=root group=root mode=0644
   register: timezone

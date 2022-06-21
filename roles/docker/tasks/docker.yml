@@ -39,11 +39,6 @@
     state: started
     enabled: true
 
-- name: docker | add remote "scraane" user to "docker" group
-  remote_user: scraane
-  user:
-    name: "scraane"
-    group: "docker"
 
 - name: docker | create docker-data directory if it does not exist
   file:
