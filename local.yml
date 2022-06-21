@@ -13,20 +13,6 @@
         state: latest
       loop: [ 'htop', 'wget', 'curl', 'vim', 'sudo', 'nano']  
 
-    - name: pre-run | add ansible user
-      user:
-        name: ansible.cron
-        system: yes
-
-    - name: pre-run | set up sudo for ansible user
-      copy:
-        src: files/sudoer_ansible.cron
-        dest: /etc/sudoers.d/ansible.cron
-        owner: root
-        group: root
-        mode: 0440
-
-
 - hosts: all
   tags: base
   become: true
