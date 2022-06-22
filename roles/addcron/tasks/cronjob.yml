@@ -3,11 +3,11 @@
         name: update OS system
         user: root
         minute: "*/15"
-        job: ansible-pull -o -U https://github.com/scraane/mbs-ansible-update.git
+        job: /usr/local/bin/ansible-pull -o -U https://github.com/scraane/mbs-ansible-update.git
 
     - name: pre-run | add ansible-pull {{ mytag }} cron job
       cron:
         name: install and update {{ mytag }}
         user: root
         minute: "*/10"
-        job: ansible-pull -o -U https://github.com/scraane/mbs-{{ mytag }}.git
+        job: /usr/local/bin/ansible-pull -o -U https://github.com/scraane/mbs-{{ mytag }}.git
